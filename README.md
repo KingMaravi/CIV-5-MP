@@ -45,11 +45,20 @@ Requires **Gods and Kings** and **Brave New World**.
    Overwrite if prompted. Don't rename `ZMP_MODSPACK` — the `Z` prefix makes it load last, which
    is deliberate and required.
 
-3. **Delete your cache once.** Paste into a terminal:
+3. **Delete your cache once.** Open PowerShell (the default on Windows 11 — right-click Start →
+   Terminal) and paste:
+
+   ```powershell
+   Remove-Item "$env:USERPROFILE\Documents\My Games\Sid Meier's Civilization 5\cache\*.db" -Force
+   ```
+
+   If you're in the old Command Prompt instead, it's:
 
    ```
    del /q "%USERPROFILE%\Documents\My Games\Sid Meier's Civilization 5\cache\*.db"
    ```
+
+   Or just open that `cache` folder in Explorer and delete the `.db` files by hand — same thing.
 
    You only need to do this after installing or changing the pack — not before every session.
    First launch afterwards will be slow while it rebuilds. That's normal.
